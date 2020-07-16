@@ -1,7 +1,9 @@
+const api_key = process.env.REACT_APP_SECRET_KEY;
+
 export const getGifs = async (category) => {
   const url = `https://api.giphy.com/v1/gifs/search?q=${encodeURI(
     category
-  )}&limit=10&api_key=xVdvLgjPmdpvFCLL5y2DuiY6WmLdX85h`;
+  )}&limit=10&api_key=${api_key}`;
 
   const resp = await fetch(url);
   const { data } = await resp.json();
